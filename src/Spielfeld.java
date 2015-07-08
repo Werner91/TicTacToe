@@ -68,15 +68,14 @@ public class Spielfeld extends JPanel{
 		
 	}
 	
-	/*
-	public void clearSpielfeld(){
+	public void paintBackground(Color color){
 		for(int y_achse = 0; y_achse < zeilen; y_achse++){
-			for(int x_achse = 0; x_achse < spalten; x_achse++){
-				spielfeld[y_achse][x_achse].setText("");
+			for(int x_achse = 0; x_achse < spalten; x_achse++){	
+				spielfeld[y_achse][x_achse].setBackground(color);;
+				this.add(spielfeld[y_achse][x_achse]);
 			}
 		}
 	}
-	*/
 	
 	public JLabel[][] getspielfeld_labels(){
 		return spielfeld; //liefer das Spielfeld zurueck
