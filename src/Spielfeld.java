@@ -17,15 +17,16 @@ public class Spielfeld extends JPanel{
 	
 	private Hauptfenster hauptfenster;
 	private JLabel spielfeld [][]; //Matrix Array
-	//private TicTacToeEvent tictactoeevent;
 	private int zeilen;
 	private int spalten;
+	private ListenerMaus mauslistener; //mauslistener
+	
 	
 	public Spielfeld(Hauptfenster _hauptfenster){ //Konstruktor für das Spielfeld
 		hauptfenster = _hauptfenster;
 		zeilen = hauptfenster.gettictactoelogik().getSize();
 		spalten = hauptfenster.gettictactoelogik().getSize();
-		//tictactoeevent = new TicTacToeEvent();
+		mauslistener = new ListenerMaus(hauptfenster);
 		this.createSpielfeld();//Spielfeld erzeugen
 		
 	}
@@ -35,6 +36,7 @@ public class Spielfeld extends JPanel{
 		this.setLayout( new GridLayout(zeilen, spalten)); //Das JLabel bekommt ein Gridlayout
 		spielfeld = new JLabel [zeilen][spalten]; //Spielfeld ist ein Matrix Array (initialisieren)
 		
+		
 		for(int y_achse = 0; y_achse < zeilen; y_achse++){
 			for(int x_achse = 0; x_achse < spalten; x_achse++){
 				// Label mit 70 x 70 pixel anlegen
@@ -42,7 +44,7 @@ public class Spielfeld extends JPanel{
 				spielfeld[y_achse][x_achse].setPreferredSize(new Dimension(70,70));
 				spielfeld[y_achse][x_achse].setBorder(BorderFactory.createLineBorder(Color.black));
 				/* Listener registrieren */
-				this.spielfeld[y_achse][x_achse].addMouseListener(new ListenerMaus(hauptfenster));
+				this.spielfeld[y_achse][x_achse].addMouseListener(mauslistener);
 				this.spielfeld[y_achse][x_achse].setOpaque(true); //Labels sichtbar machen
 				//Das Array mit den Labels zum Panel hinzufügen
 				this.add(spielfeld[y_achse][x_achse]);
@@ -68,6 +70,16 @@ public class Spielfeld extends JPanel{
 		
 	}
 	
+	
+	//entfernde den MausListener nach dem Spielende
+		public void removeMausListener(){			
+			for(int y_achse = 0; y_achse < zeilen; y_achse++){
+				for(int x_achse = 0; x_achse < spalten; x_achse++){
+					this.spielfeld[y_achse][x_achse].removeMouseListener(mauslistener);
+				}
+			}
+		}
+	
 	public void paintBackground(Color color){
 		for(int y_achse = 0; y_achse < zeilen; y_achse++){
 			for(int x_achse = 0; x_achse < spalten; x_achse++){	
@@ -76,6 +88,8 @@ public class Spielfeld extends JPanel{
 			}
 		}
 	}
+	
+	
 	
 	public JLabel[][] getspielfeld_labels(){
 		return spielfeld; //liefer das Spielfeld zurueck

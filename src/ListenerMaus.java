@@ -46,18 +46,15 @@ public class ListenerMaus extends MouseAdapter implements ActionListener{
 		int size_x = hauptfenster.gettictactoelogik().getSize();
 		int size_y = hauptfenster.gettictactoelogik().getSize();;	
 		
+		/* lege Spielfeld an */
+		labelArray = new JLabel[size_x][size_y];
+		labelArray = hauptfenster.getSpielfeld().getspielfeld_labels();
+		
 		//Linksklick
-		if(e.getButton() == 1) {	
-
-			/* groesse des Spielfelds */
-			//size_x = hauptfenster.getDionaRapModel().getGrid().getGridSizeX();
-			//size_y = hauptfenster.getDionaRapModel().getGrid().getGridSizeY();
+		if(e.getButton() == 1) {
 			
 			
-			/* lege Spielfeld an */
-			labelArray = new JLabel[size_x][size_y];
-			labelArray = hauptfenster.getSpielfeld().getspielfeld_labels();
-			
+		
 			/* pruefen auf welches Label der Linksklick gemacht wurde */
 			for(int i = 0; i < size_y; i++){
 				for(int j = 0; j < size_x; j++){

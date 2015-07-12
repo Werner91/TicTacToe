@@ -38,19 +38,26 @@ public class Listener implements TicTacToeListener{
 		if(hauptfenster.gettictactoelogik().getWinner() == TicTacToeLogic.SPIELER){
 			System.out.println("Spieler hat gewonnen");
 			hauptfenster.getSpielfeld().paintBackground(Color.GREEN);
+			hauptfenster.getSpielfeld().removeMausListener();
+			hauptfenster.createSpielfeldThread(Color.GREEN);
+			hauptfenster.drawGameResultDialog();
 			
 		}
 		
 		if(hauptfenster.gettictactoelogik().getWinner() == TicTacToeLogic.TicTacToe){
 			System.out.println("Spielelogik ist Gewinner");
 			hauptfenster.getSpielfeld().paintBackground(Color.YELLOW);
-	
+			hauptfenster.getSpielfeld().removeMausListener();
+			hauptfenster.createSpielfeldThread(Color.YELLOW);
+			hauptfenster.drawGameResultDialog();
 		}
 		
 		if(hauptfenster.gettictactoelogik().getWinner() == TicTacToeLogic.FINISH){
 			System.out.println("Unentschieden");
 			hauptfenster.getSpielfeld().paintBackground(Color.RED);
-
+			hauptfenster.getSpielfeld().removeMausListener();
+			hauptfenster.createSpielfeldThread(Color.RED);
+			hauptfenster.drawGameResultDialog();
 		}
 	}
 	
