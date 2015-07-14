@@ -44,11 +44,12 @@ public class Hauptfenster extends JFrame{
 		
 		
 		this.setJMenuBar(menubar = new MenuBar(this)); //Menubar im Norden des Fenster einsetzen
+		this.pack(); //Inhalt bzw. BorderLayout auf nötige größe skalieren
 		this.setLocationRelativeTo(null); //Ort des Fensters auf dem Bildschirm festlegen
 		navigator = new Navigator(this, this);
 		this.addComponentListener(new ListenerFenster(navigator));
 		this.addKeyListener(new ListenerKey());
-		this.pack(); //Inhalt bzw. BorderLayout auf nötige größe skalieren
+		
 		this.setVisible(true); //Fenster sichtbar machen
 		this.requestFocus(); //Um den Focus
 	}

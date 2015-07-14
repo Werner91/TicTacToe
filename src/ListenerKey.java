@@ -53,11 +53,7 @@ public class ListenerKey extends KeyAdapter implements KeyListener{
 			hauptfenster.gettictactoelogik().setField(0, 2);
 			hauptfenster.getSpielfeld().repaint();
 		}
-		
-		
-		
+
 	}
-	
-	
-	
+
 }

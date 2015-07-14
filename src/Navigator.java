@@ -40,5 +40,4 @@ public class Navigator extends JWindow implements ActionListener{
 			hauptfenster.startNewGame();
 		}
 	}
-	
 }

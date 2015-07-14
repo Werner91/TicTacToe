@@ -1,8 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-
-
 public class MenuBar extends JMenuBar implements ActionListener{
 
 	Hauptfenster hauptfenster;
@@ -59,16 +57,11 @@ public class MenuBar extends JMenuBar implements ActionListener{
 				active_radiobutton = i;
 			}
 		}
-
-		
-		
 		spiel.add(neuesspiel);
 		spiel.add(lookandfeel);
 		hilfe.add(spielebeschreibung);
 		this.add(spiel); // Item zu Menuleiste hinzufuegen
 		this.add(hilfe);
-		
-
 	}
 	
 	
@@ -111,10 +104,6 @@ public class MenuBar extends JMenuBar implements ActionListener{
 				}
 				hauptfenster.pack();
 			}
-			
 		}
-		
 	}
-	
-	
 }

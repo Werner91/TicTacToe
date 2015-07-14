@@ -1,9 +1,8 @@
 import java.awt.*;
 
 import javax.swing.*;
-
 import de.fhwgt.tictactoe.TicTacToeEvent;
-
+import de.fhwgt.tictactoe.TicTacToeLogic;
 
 
 /**
@@ -28,10 +27,8 @@ public class Spielfeld extends JPanel{
 		spalten = hauptfenster.gettictactoelogik().getSize();
 		mauslistener = new ListenerMaus(hauptfenster);
 		this.createSpielfeld();//Spielfeld erzeugen
-		
 	}
 
-	
 	public void createSpielfeld(){
 		this.setLayout( new GridLayout(zeilen, spalten)); //Das JLabel bekommt ein Gridlayout
 		spielfeld = new JLabel [zeilen][spalten]; //Spielfeld ist ein Matrix Array (initialisieren)
@@ -55,7 +52,7 @@ public class Spielfeld extends JPanel{
 	public void drawSpielfeld(TicTacToeEvent e){
 
 			if(hauptfenster.gettictactoelogik().getactivePoint() != null){
-				if(e.getSpieler() == 1){
+				if(e.getSpieler() == TicTacToeLogic.SPIELER){
 					this.spielfeld[hauptfenster.gettictactoelogik().getactivePoint().x][hauptfenster.gettictactoelogik().getactivePoint().y].setText("O");
 					this.spielfeld[hauptfenster.gettictactoelogik().getactivePoint().x][hauptfenster.gettictactoelogik().getactivePoint().y].setHorizontalAlignment(JLabel.CENTER);
 				}else{
@@ -67,7 +64,6 @@ public class Spielfeld extends JPanel{
 			hauptfenster.gettictactoelogik().printBoard(); //Gibt die Besetzung des Spielfeldes als Text auf die Konsole aus
 			System.out.println();
 			System.out.println();
-		
 	}
 	
 	
@@ -88,8 +84,6 @@ public class Spielfeld extends JPanel{
 			}
 		}
 	}
-	
-	
 	
 	public JLabel[][] getspielfeld_labels(){
 		return spielfeld; //liefer das Spielfeld zurueck

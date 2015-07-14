@@ -5,9 +5,6 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 
-
-
-
 /**
  * Klasse realisiert den Listener fuer Mausereignisse. Die Klasse ist abgeleitet
  * von  <code>MouseAdapter</code> und implementiert
@@ -16,8 +13,6 @@ import javax.swing.JLabel;
  * @author Werner Steinbinder
  * 
  */
-
-
 
 public class ListenerMaus extends MouseAdapter implements ActionListener{
 	

@@ -1,7 +1,5 @@
 import java.awt.Color;
-
 import javax.swing.BorderFactory;
-
 
 /*
  * Klasse realisiert Das Blinken des Spielfelds nach dem das Spiel zuende ist
@@ -39,6 +37,5 @@ class SpielfeldThread extends Thread{
 				System.out.println(ex.getStackTrace());
 			}
 		}
-	}
-		
+	}	
 }

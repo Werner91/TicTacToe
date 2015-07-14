@@ -5,7 +5,7 @@ import java.awt.event.*;
  */
 
 
-public class ListenerFenster extends ComponentAdapter implements ComponentListener{
+public class ListenerFenster extends ComponentAdapter{
 	
 	private Navigator navigator;
 	

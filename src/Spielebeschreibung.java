@@ -12,8 +12,6 @@ import java.io.IOException;
 public class Spielebeschreibung extends JDialog{
 	
 	private Hauptfenster hauptfenster;
-
-
 	private JScrollPane scrollpane;
 	
 	
@@ -38,7 +36,5 @@ public class Spielebeschreibung extends JDialog{
 		this.setModal(false); // Geht nur bei JDialog
 		this.setLocationRelativeTo(hauptfenster);
 		this.setVisible(true);
-	
-	}
-	
+	}	
 }
